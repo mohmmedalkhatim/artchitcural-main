@@ -7,6 +7,18 @@
     font-family: lora ;
     src: url(./fonts/Lora.ttf);
 }
+:root {
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    scrollbar-gutter: stable both-edges;
+  }
 
 *{
     font-family: lora
@@ -14,9 +26,8 @@
 @layer components {
 
     header{
-        @apply w-screen h-[4rem] fixed grid bg-[#fff] z-10;
+        @apply w-full h-[4rem] fixed grid bg-[#fff] z-10;
         grid-template-columns: repeat(auto-fill,minmax(4rem,1fr));
-    
     }
     footer{
         @apply fixed h-[20rem]  bg-secondary-800 grid;
@@ -26,19 +37,22 @@
         @apply flex  gap-12 items-center justify-center;
         grid-column: 5 / -5;
     }
-    main{
-        @apply container sm:px-[1rem] md:px-[4rem] lg:px-[8rem] ;
+    section{
+        @apply w-full
     }
+    .content{
+    }
+
     .slider{
-        background-size: 40% 70% ;
-        background-position: 90% 5rem;
-        @apply min-w-full  h-[40rem] container  flex bg-no-repeat;
+        @apply w-screen flex bg-no-repeat min-w-[98vw] items-center justify-around;
     }
     .Links{
         @apply  grid px-4 text-secondary-800 rounded-[2rem] col-span-9 col-start-10 z-40 grid-rows-1 ;
         grid-template-columns: repeat(auto-fill,minmax(3rem,1fr));
         grid-auto-rows: 100%;
-
+    }
+    .descrption{
+        @apply flex flex-col items-start max-w-sm
     }
     .Links a{
         grid-column: auto / span 2;
@@ -47,18 +61,23 @@
         justify-content: center
     }
     .title{
-        @apply text-3xl  p-[10rem] leading-[4rem] ; 
+        @apply text-3xl ; 
     }
     .btn{
         @apply py-2 px-3  hover:bg-secondary-600 transition-colors hover:text-secondary-50 hover:border-secondary-50 border-secondary-800 border-spacing-3 border font-medium text-lg inline-flex items-center flex-row;
     }
 
     .carousel{
-        @apply flex overflow-hidden sm:h-[10rem] lg:h-[40rem]
+        @apply flex overflow-hidden lg:h-screen lg:w-screen
     }
+    
     .List{
         display: grid;
-        grid-template-columns: repeat(auto-fill,minmax(5rem,1fr));
+        grid-template-columns: repeat(auto-fill,minmax(6rem,1fr));
+    }
+    .gallary{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(4.5rem,1fr));   
     }
     .item{
         @apply flex flex-col text-secondary-800 col-span-3 rounded-sm p-4;

@@ -8,10 +8,9 @@ export type Info = {
 }
 
 const Item = (info:Info) => {
-
     return (
         <div className={`item`}>
-            <div className={` h-[15rem] w-[14rem] `}  >
+            <div className={` h-[17rem] w-[16rem] `}  >
                 <img src={`/img/${info.id}.jpg`} className='h-full w-full' alt="" />
             </div>
             <div className='p-4'>

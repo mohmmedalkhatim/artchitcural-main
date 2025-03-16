@@ -5,9 +5,6 @@ import { router } from "./router";
 import { QueryClientProvider, QueryClient } from 'react-query'
 
 
-
-
-
 const client = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
